@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: transactionhub
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/transactionhub}
+    username: ${DB_USERNAME:transactionhub}
+    password: ${DB_PASSWORD:local-development-only}
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+  jackson:
+    deserialization:
+      fail-on-unknown-properties: true
+  mvc:
+    problemdetails:
+      enabled: true
+server:
+  address: ${SERVER_ADDRESS:127.0.0.1}
+  port: ${SERVER_PORT:8080}
+  error:
+    include-message: never
+    include-stacktrace: never
